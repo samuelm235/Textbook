@@ -1,4 +1,4 @@
-public class Textbook extends book
+public class Textbook extends Book
 {
     private int edition;
     public Textbook(String title, double price, int ed)
@@ -11,4 +11,16 @@ public class Textbook extends book
     {
         return edition;
     }
+
+    public boolean canSubstituteFor(Textbook t)
+    {
+        if(getTitle().equals(t.getTitle())) return edition >= t.edition;
+        return false;
+    }
+
+    public String getBookInfo()
+    {
+        return super.getBookInfo() + "-" + edition;
+    }
+
 }
